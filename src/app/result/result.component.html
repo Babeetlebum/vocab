@@ -1,0 +1,10 @@
+@if (answer === correctAnswer) {
+<span class="correct">
+  Bravo ! The answer was indeed '{{ pinyin }}', good work ! 🎉🥳
+</span>
+} @else {
+<span class="incorrect">
+  Nope, sorry the response was '{{ pinyin }}' ('{{ correctAnswer }}') and you
+  answered '{{ answer }}' 😔💀
+</span>
+}

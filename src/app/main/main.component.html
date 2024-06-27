@@ -1,0 +1,24 @@
+@if(vm$ | async; as vm) {
+<main class="main">
+  @if(vm.hanzi) {
+  <div class="content">
+    <app-card
+      [hanzi]="vm.hanzi"
+      (pinyinSubmitted)="onPinyinSubmission($event)"
+    />
+
+    @if(vm.answer !== undefined) {
+    <app-result
+      [answer]="vm.answer"
+      [correctAnswer]="vm.correctAnswer"
+      [pinyin]="vm.pinyin"
+    />
+
+    <app-translations [translations]="vm.translations" />
+    }
+  </div>
+  }
+</main>
+<pre>{{ vm | json }}</pre>
+
+}
